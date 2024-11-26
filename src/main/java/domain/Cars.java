@@ -35,13 +35,15 @@ public class Cars {
 	}
 
 	public List<String> winners() {
-		List<String> winners = new ArrayList<>();
-		int max = Integer.MIN_VALUE;
-		for (Car car : this.cars) {
-			if (car.isWin(max)) {
-				winners.add(car.getName());
-			}
-		}
-		return winners;
+		// 가장 큰 위치값 찾기
+		int maxPosition = this.cars.stream()
+			.mapToInt(Car::getPosition)
+			.max()
+			.orElse(Integer.MIN_VALUE);
+
+		return this.cars.stream()
+			.filter(car -> car.equalsPosition(maxPosition))
+			.map(Car::getName)
+			.collect(Collectors.toList());
 	}
 }

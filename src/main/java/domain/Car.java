@@ -45,7 +45,7 @@ public class Car {
 		return builder.toString();
 	}
 
-	public boolean isWin(int compare) {
-		return this.position >= compare;
+	public boolean equalsPosition(int position) {
+		return this.position == position;
 	}
 }
