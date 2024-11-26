@@ -35,4 +35,13 @@ public class Car {
 			this.position++;
 		}
 	}
+
+	public String print() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(this.name + " : ");
+		for(int i =0; i < this.position; i++) {
+			builder.append("-");
+		}
+		return builder.toString();
+	}
 }

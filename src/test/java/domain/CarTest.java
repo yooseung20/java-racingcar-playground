@@ -50,4 +50,14 @@ public class CarTest {
 
 		assertThat(car.getPosition()).isEqualTo(0);
 	}
+
+	@Test
+	void 자동차는_자신의_이름과_위치정보를_출력할수있다() {
+		String name = "pobi";
+		Car car = new Car(name);
+		car.move(5);
+
+		String result = car.print();
+		assertThat(result).contains("pobi : -");
+	}
 }
