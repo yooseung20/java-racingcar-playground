@@ -18,6 +18,17 @@ public class Position {
 		return new Position(this.position + 1);
 	}
 
+	public int getMaxPosition(int maxPosition) {
+		if (this.position > maxPosition) {
+			return this.position;
+		}
+		return maxPosition;
+	}
+
+	public int getPosition() {
+		return this.position;
+	}
+
 	@Override
 	public boolean equals(Object object) {
 		if (this == object)
@@ -32,4 +43,6 @@ public class Position {
 	public int hashCode() {
 		return Objects.hash(position);
 	}
+
+
 }

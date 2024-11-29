@@ -10,6 +10,11 @@ public class Car {
 		this.position = new Position();
 	}
 
+	public Car(String name, int position) {
+		this.name = new CarName(name);
+		this.position = new Position(position);
+	}
+
 	public void move(int accelerator) {
 		if (isMovable(accelerator)) {
 			this.position = this.position.move();
@@ -20,7 +25,19 @@ public class Car {
 		return accelerator >= MIN_ACCELERATOR;
 	}
 
-	public Position getPosition() {
-		return this.position;
+	public int getPosition() {
+		return this.position.getPosition();
+	}
+
+	public String getName() {
+		return this.name.getName();
+	}
+
+	public int getMaxPosition(int maxPosition) {
+		return this.position.getMaxPosition(maxPosition);
+	}
+
+	public boolean isWinner(int maxPosition) {
+		return this.position.equals(new Position(maxPosition));
 	}
 }
