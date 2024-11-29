@@ -8,6 +8,12 @@ public class Round {
 
 	public Round(int round) {
 		this.round = round;
+		validateRound();
+	}
+	private void validateRound() {
+		if (this.round < ZERO) {
+			throw new IllegalArgumentException("라운드는 음수값일 수 없습니다.");
+		}
 	}
 
 	public boolean isContinue() {

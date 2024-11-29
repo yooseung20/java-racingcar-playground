@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import racinggame.util.RandomNumber;
 
 public class Cars {
 	private final List<Car> cars;
@@ -37,4 +38,9 @@ public class Cars {
 		return maxPosition;
 	}
 
+	public void round() {
+		for (Car car: this.cars) {
+			car.move(RandomNumber.createUnits());
+		}
+	}
 }
