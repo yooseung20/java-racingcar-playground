@@ -25,11 +25,13 @@ public class RacingGame {
 		return this.round.isContinue();
 	}
 
-	public Map<String, Integer> round() {
+	public void round() {
 
 		this.cars.round();
 		this.round = this.round.decrease();
+	}
 
+	public Map<String, Integer> getCarState() {
 		return this.cars.getCarState();
 	}
 

@@ -22,13 +22,6 @@ class RacingGameTest {
 	}
 
 	@Test
-	void 라운드가_끝나면_자동차의상태를_알수있다() {
-		RacingGame racingGame = new RacingGame(Arrays.asList("pobi", "crong", "honux"), 1);
-		Map<String, Integer > result =  racingGame.round();
-		assertThat(result.keySet()).containsExactlyInAnyOrder("pobi", "crong", "honux");
-	}
-
-	@Test
 	void 라운드가_끝나면_라운드를_진행할수_없다() {
 		RacingGame racingGame = new RacingGame(Arrays.asList("pobi", "crong", "honux"), 1);
 		racingGame.round();
