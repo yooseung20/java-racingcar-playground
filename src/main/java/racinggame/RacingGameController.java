@@ -27,7 +27,7 @@ public class RacingGameController {
 
 		while(race.hasRound()) {
 			race.round();
-			ResultView.printRoundResult(race.getCarState());
+			ResultView.printRoundResult(race.getRoundResult());
 		}
 
 		ResultView.printWinner(race.findWinners());

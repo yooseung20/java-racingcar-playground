@@ -11,7 +11,6 @@ public class RacingGame {
 	private final Cars cars;
 	private Round round;
 
-
 	public  RacingGame(List<String> cars, int round) {
 		this.cars = mappingCars(cars);
 		this.round = new Round(round);
@@ -33,8 +32,8 @@ public class RacingGame {
 		this.round = this.round.decrease();
 	}
 
-	public Map<String, Integer> getCarState() {
-		return this.cars.getCarState();
+	public RoundResult getRoundResult() {
+		return new RoundResult(this.cars.getCarState());
 	}
 
 	public List<String> findWinners() {
