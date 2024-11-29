@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 
+import racinggame.strategy.MovableStrategy;
+
 class RacingGameTest {
 
 	@Test

@@ -5,9 +5,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import racinggame.strategy.RandomStrategyImpl;
+
 public class RacingGame {
 	private final Cars cars;
 	private Round round;
+
 
 	public  RacingGame(List<String> cars, int round) {
 		this.cars = mappingCars(cars);
@@ -26,8 +29,7 @@ public class RacingGame {
 	}
 
 	public void round() {
-
-		this.cars.round();
+		this.cars.round(new RandomStrategyImpl());
 		this.round = this.round.decrease();
 	}
 

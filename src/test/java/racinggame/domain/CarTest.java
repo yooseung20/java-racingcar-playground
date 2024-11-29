@@ -9,7 +9,7 @@ class CarTest {
 	@Test
 	void 차가_앞으로_움직인다() {
 		Car car  = new Car("pobi");
-		car.move(4);
+		car.move(() -> true);
 
 		assertThat(car.getPosition()).isEqualTo(1);
 	}
@@ -17,7 +17,7 @@ class CarTest {
 	@Test
 	void 차가_멈춰있는다() {
 		Car car  = new Car("pobi");
-		car.move(3);
+		car.move(() -> false);
 
 		assertThat(car.getPosition()).isEqualTo(0);
 

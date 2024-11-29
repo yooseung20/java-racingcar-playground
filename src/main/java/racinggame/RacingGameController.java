@@ -3,6 +3,8 @@ package racinggame;
 import java.util.Scanner;
 
 import racinggame.domain.RacingGame;
+import racinggame.strategy.MovableStrategy;
+import racinggame.strategy.RandomStrategyImpl;
 import racinggame.util.NameSplitter;
 
 public class RacingGameController {
@@ -19,6 +21,8 @@ public class RacingGameController {
 	}
 
 	private static void start(RacingGame race) {
+		MovableStrategy randomStrategy = new RandomStrategyImpl();
+
 		ResultView.printRoundStart();
 
 		while(race.hasRound()) {

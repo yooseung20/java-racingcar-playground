@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import racinggame.strategy.MovableStrategy;
 import racinggame.util.RandomNumber;
 
 public class Cars {
@@ -38,9 +39,9 @@ public class Cars {
 		return maxPosition;
 	}
 
-	public void round() {
+	public void round(MovableStrategy movableStrategy) {
 		for (Car car: this.cars) {
-			car.move(RandomNumber.createUnits());
+			car.move(movableStrategy);
 		}
 	}
 }
